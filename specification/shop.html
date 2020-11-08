@@ -1,0 +1,366 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Shop - Open Marketplace Documentation</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../architecture/index.html"><strong aria-hidden="true">2.</strong> Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../architecture/application.html"><strong aria-hidden="true">2.1.</strong> Application</a></li><li class="chapter-item expanded "><a href="../architecture/communication.html"><strong aria-hidden="true">2.2.</strong> Communication</a></li><li class="chapter-item expanded "><a href="../architecture/authentication.html"><strong aria-hidden="true">2.3.</strong> Authentication</a></li><li class="chapter-item expanded "><a href="../architecture/payment_providers.html"><strong aria-hidden="true">2.4.</strong> Payment Providers</a></li><li class="chapter-item expanded "><a href="../architecture/storage.html"><strong aria-hidden="true">2.5.</strong> Storage</a></li></ol></li><li class="chapter-item expanded "><a href="../specification/index.html"><strong aria-hidden="true">3.</strong> Specification</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../specification/shop.html" class="active"><strong aria-hidden="true">3.1.</strong> Shop</a></li><li class="chapter-item expanded "><a href="../specification/product.html"><strong aria-hidden="true">3.2.</strong> Product</a></li><li class="chapter-item expanded "><a href="../specification/order.html"><strong aria-hidden="true">3.3.</strong> Order</a></li><li class="chapter-item expanded "><a href="../specification/marketplace.html"><strong aria-hidden="true">3.4.</strong> Marketplace</a></li></ol></li><li class="chapter-item expanded "><a href="../applications/index.html"><strong aria-hidden="true">4.</strong> Applications</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../applications/anna.html"><strong aria-hidden="true">4.1.</strong> ANNA</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Open Marketplace Documentation</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#shop" id="shop">Shop</a></h1>
+<p>This specification describes a decentralized shop model. </p>
+<p>The Shop is simply a signet file with all kinds of information about the shop, like name, product list, and the owner. This file can be hosted on a decentralized network. That means it doesn't need to be deployed to on a server. Hosting a file is much cheaper than running a whole program. The file gets read and interpreted by the user. </p>
+<p>Users can discover new shops in marketplaces. </p>
+<p>For some services like sending a Mail or accept Paypal or Stripe, the shop needs to interact with a backend, to handle the logic.</p>
+<h2><a class="header" href="#object" id="object">Object</a></h2>
+<pre><code class="language-javascript=">{
+    // Unique shop id
+    id: String,
+    // Owner of the shop as DID
+    owner: String,
+    // Name of the shop
+    name: String
+    // This url returns a list off all products as json
+    product_list_url: String
+    categories: Array
+}
+</code></pre>
+<h2><a class="header" href="#json-example" id="json-example">JSON Example</a></h2>
+<pre><code class="language-json">{
+    &quot;id&quot;: &quot;950371f9-34a4-49dd-9d55-31160e2d1caf&quot;,
+    &quot;name&quot;: &quot;A Sample Shop&quot;,
+    &quot;owner&quot;: &quot;did:iota:shopowner&quot;,
+    &quot;product_list_url&quot;: &quot;https://openmarketplace.org/shops/950371f9-34a4-49dd-9d55-31160e2d1caf&quot;,
+    &quot;categories&quot;: [
+        &quot;books&quot;,
+        &quot;magazines&quot;
+    ]
+}
+</code></pre>
+<h2><a class="header" href="#json-schema" id="json-schema">JSON Schema</a></h2>
+<pre><code class="language-json">{
+    &quot;$schema&quot;: &quot;http://json-schema.org/draft-07/schema&quot;,
+    &quot;$id&quot;: &quot;http://example.com/example.json&quot;,
+    &quot;type&quot;: &quot;object&quot;,
+    &quot;title&quot;: &quot;The root schema&quot;,
+    &quot;description&quot;: &quot;The root schema comprises the entire JSON document.&quot;,
+    &quot;default&quot;: {},
+    &quot;examples&quot;: [
+        {
+            &quot;id&quot;: &quot;950371f9-34a4-49dd-9d55-31160e2d1caf&quot;,
+            &quot;name&quot;: &quot;A Sample Shop&quot;,
+            &quot;owner&quot;: &quot;did:iota:shopowner&quot;,
+            &quot;product_list_url&quot;: &quot;https://openmarketplace.org/shops/950371f9-34a4-49dd-9d55-31160e2d1caf&quot;,
+            &quot;categories&quot;: [
+                &quot;books&quot;,
+                &quot;magazines&quot;
+            ]
+        }
+    ],
+    &quot;required&quot;: [
+        &quot;id&quot;,
+        &quot;name&quot;,
+        &quot;owner&quot;,
+        &quot;product_list_url&quot;,
+        &quot;categories&quot;
+    ],
+    &quot;properties&quot;: {
+        &quot;id&quot;: {
+            &quot;$id&quot;: &quot;#/properties/id&quot;,
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;title&quot;: &quot;The id schema&quot;,
+            &quot;description&quot;: &quot;A Unique shop id&quot;,
+            &quot;default&quot;: &quot;&quot;,
+            &quot;examples&quot;: [
+                &quot;950371f9-34a4-49dd-9d55-31160e2d1caf&quot;
+            ]
+        },
+        &quot;name&quot;: {
+            &quot;$id&quot;: &quot;#/properties/name&quot;,
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;title&quot;: &quot;The name schema&quot;,
+            &quot;description&quot;: &quot;Name of the shop&quot;,
+            &quot;default&quot;: &quot;&quot;,
+            &quot;examples&quot;: [
+                &quot;A Sample Shop&quot;
+            ]
+        },
+        &quot;owner&quot;: {
+            &quot;$id&quot;: &quot;#/properties/owner&quot;,
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;title&quot;: &quot;The owner schema&quot;,
+            &quot;description&quot;: &quot;Owner of the shop as DID&quot;,
+            &quot;default&quot;: &quot;&quot;,
+            &quot;examples&quot;: [
+                &quot;did:iota:shopowner&quot;
+            ]
+        },
+        &quot;product_list_url&quot;: {
+            &quot;$id&quot;: &quot;#/properties/product_list_url&quot;,
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;title&quot;: &quot;The product_list_url schema&quot;,
+            &quot;description&quot;: &quot;This url returns a list off all products as json.&quot;,
+            &quot;default&quot;: &quot;&quot;,
+            &quot;examples&quot;: [
+                &quot;https://openmarketplace.org/shops/950371f9-34a4-49dd-9d55-31160e2d1caf&quot;
+            ]
+        },
+        &quot;categories&quot;: {
+            &quot;$id&quot;: &quot;#/properties/categories&quot;,
+            &quot;type&quot;: &quot;array&quot;,
+            &quot;title&quot;: &quot;The categories schema&quot;,
+            &quot;description&quot;: &quot;List of categories, which describes the shop.&quot;,
+            &quot;default&quot;: [],
+            &quot;examples&quot;: [
+                [
+                    &quot;books&quot;,
+                    &quot;magazines&quot;
+                ]
+            ],
+            &quot;additionalItems&quot;: true,
+            &quot;items&quot;: {
+                &quot;$id&quot;: &quot;#/properties/categories/items&quot;,
+                &quot;anyOf&quot;: [
+                    {
+                        &quot;$id&quot;: &quot;#/properties/categories/items/anyOf/0&quot;,
+                        &quot;type&quot;: &quot;string&quot;,
+                        &quot;title&quot;: &quot;The first anyOf schema&quot;,
+                        &quot;description&quot;: &quot;An explanation about the purpose of this instance.&quot;,
+                        &quot;default&quot;: &quot;&quot;,
+                        &quot;examples&quot;: [
+                            &quot;books&quot;,
+                            &quot;magazines&quot;
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    &quot;additionalProperties&quot;: true
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../specification/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../specification/product.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../specification/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../specification/product.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
