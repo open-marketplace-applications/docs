@@ -3,7 +3,7 @@
   <a href="https://openmarketplace.org/">
      <img
       alt="open marketplace apps"
-      src="./logo.svg"
+      src="./assets/logo.svg"
       width="150"
     />
   </a>
