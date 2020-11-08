@@ -1,0 +1,16 @@
+# Summary
+
+- [Introduction](./introduction.md)
+- [Architecture](./architecture/README.md)
+    - [Application](./architecture/application.md)
+    - [Communication](./architecture/communication.md)
+    - [Authentication](./architecture/authentication.md)
+    - [Payment Providers](./architecture/payment_providers.md)
+    - [Storage](./architecture/storage.md)
+- [Specification](./specification/README.md)
+    - [Shop](./specification/shop.md)
+    - [Product](./specification/product.md)
+    - [Order](./specification/order.md)
+    - [Marketplace](./specification/marketplace.md)
+- [Applications](./applications/README.md)
+    - [ANNA](./applications/anna.md)
